@@ -36,17 +36,20 @@ public class ConnectionPool {
 	 * @throws SQLException
 	 */
 	Connection getConnection() {
-		try {
-			try {
-				Class.forName("org.postgresql.Driver").newInstance();
-			} catch (InstantiationException | IllegalAccessException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+
+				try {
+					Class.forName("org.postgresql.Driver").newInstance();
+				} catch (InstantiationException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IllegalAccessException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (ClassNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+		
 		String username = "inpczztcvtlnnm";
 		String password = "23c71b3b0a14a6ec45e19801e503883418f77c445c263e65d94cb286eb04f8bb";
 		String dbUrl = "jdbc:postgresql://" + "ec2-54-217-250-0.eu-west-1.compute.amazonaws.com:5432"
